@@ -1,11 +1,10 @@
 #!/usr/bin/env node
-const readline = require('readline');
+let index = process.argv.indexOf('--name');
+let arg = '';
+if (index > -1) {
+    arg = process.argv[index + 1];
+}
 
-let rw = readline.createInterface(
-    process.stdin, process.stdout
-);
+console.log('O nome informado foi: ' + arg);
 
-rw.question('informe o nome ', (name)=>{
-    console.log('O nome informado foi: ' +name);
-});
 
